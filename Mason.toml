@@ -7,10 +7,7 @@ type = "library"
 version = "0.1.0"
 source = "https://github.com/bmcdonald3/Codecs"
 
-[dependencies]
-
 [system]
-
 libidn2 = "2.3.3"
 
 
