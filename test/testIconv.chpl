@@ -6,9 +6,10 @@ proc iconvTest(test: borrowed Test) throws {
   test.assertTrue(iconvVer.size > 0);
 }
 
-proc encodeTest(test: borrowed Test) throws {
-  var encoded = encodeStr("asd", toEncoding="ascii");
-  writeln(encoded);
+proc iconvEncodeTest(test: borrowed Test) throws {
+  var originalString = "test string";
+  var encodedString = encodeStr(originalString, toEncoding="ascii");
+  test.assertTrue(originalString == encodedString);
 }
 
 UnitTest.main();

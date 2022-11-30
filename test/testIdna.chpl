@@ -7,4 +7,11 @@ proc idnaTest(test: borrowed Test) throws{
   test.assertTrue(idnaVerStr.size > 0);
 }
 
+proc idnaEncodeTest(test: borrowed Test) throws {
+  var originalString = "ドメイン.テスト";
+  var expected = "xn--eckwd4c7c.xn--zckzah";
+  var encodedString = encodeStr(originalString, toEncoding="idna");
+  test.assertTrue(expected == encodedString);
+}
+
 UnitTest.main();

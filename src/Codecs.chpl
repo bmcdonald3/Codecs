@@ -5,7 +5,7 @@ module Codecs {
   include module iconv;
 
   proc encodeStr(obj: string, toEncoding: string = "UTF-8", fromEncoding: string = "UTF-8"): string throws {
-    if toEncoding == "IDNA" {
+    if toEncoding.toUpper() == "IDNA" {
       if fromEncoding != "UTF-8" {
         throw new Error("Only encoding from UTF-8 is supported for IDNA encoding");
       }
@@ -17,7 +17,7 @@ module Codecs {
       var ret = cRes: string;
       idna.idn2_free(cRes: c_void_ptr);
       return ret;
-    } else if fromEncoding == "IDNA" {
+    } else if fromEncoding.toUpper() == "IDNA" {
       if toEncoding != "UTF-8" {
         throw new Error("Only encoding to UTF-8 is supported for IDNA encoding");
       }
