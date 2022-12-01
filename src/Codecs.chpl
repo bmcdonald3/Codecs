@@ -3,6 +3,12 @@
   This module contains the implementation of and encodeStr function that
   can convert to/from all encodings supported by iconv and, additionally,
   idna.
+
+  In order to use this module, the libidn2 and libiconv dependencies are
+  required. To compile with those libraries, the include path, library
+  path and linker path must all be specified using `-I`, `-L`, and `-l`
+  respectively, unless there is a system install of the packages, which
+  can be installed via homebrew.
 */
 
 module Codecs {
