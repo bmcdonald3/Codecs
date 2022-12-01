@@ -7,8 +7,13 @@
   In order to use this module, the libidn2 and libiconv dependencies are
   required. To compile with those libraries, the include path, library
   path and linker path must all be specified using `-I`, `-L`, and `-l`
-  respectively, unless there is a system install of the packages, which
-  can be installed via homebrew.
+  respectively.
+
+  A sample command to run the test isis:
+  mason test --show -- -I/usr/local/Caskroom/miniforge/base/envs/arkouda-dev/include \
+  -L/usr/local/Caskroom/miniforge/base/envs/arkouda-dev/lib \
+  --ldflags="-Wl,-rpath,/usr/local/Caskroom/miniforge/base/envs/arkouda-dev/lib" \
+  -liconv -lidn2
 */
 
 module Codecs {
